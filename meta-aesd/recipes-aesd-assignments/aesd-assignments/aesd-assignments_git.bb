@@ -27,6 +27,9 @@ FILES:${PN} += " \
 # (and remove comment)
 #TARGET_LDFLAGS += "-pthread -lrt"
 
+TARGET_CC_ARCH += "${LDFLAGS}"
+# Added to solve the QA error of "doesn't have GNU_HASH (didn't pass LDFLAGS?)"
+
 INITSCRIPT_PACKAGES = "${PN}"
 INITSCRIPT_NAME:${PN} = "aesdsocket-start-stop"
 
